@@ -15,12 +15,12 @@
 		<%= f.text_field :email %>
 	</p>
 	<p>
-		<%= f.label :password_hash %> <br />
-		<%= f.password_field :password_hash %>
+		<%= f.label :password %> <br />
+		<%= f.password_field :password %>
 	</p>
 	<p>
-		<%= f.label :password_salt %> <br />
-		<%= f.password_field :password_salt %>
+		<%= f.label :password_confirmation %> <br />
+		<%= f.password_field :password_confirmation %>
 	</p>
 	<p class="actions"><%= f.submit %></p>
 <% end %>
