@@ -13,11 +13,6 @@ class SessionsController < ApplicationController
   	end
   end
 
-  def edit
-    @user = User.find(params[:id])
-    respond_with(@user)
-  end
-
   def destroy
   	session[:user_id] = nil
   	redirect_to root_url, notice: "Logged Out!"
