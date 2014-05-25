@@ -1,4 +1,7 @@
 Auth::Application.routes.draw do
+  resources :admins
+
+
   resources :sessions
   resources :users
 

@@ -8,5 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
-  
+
+  def current_admin
+		@current_admin ||= Admin.find(admin[:admin]) if admin[:admin]
+  end
 end
