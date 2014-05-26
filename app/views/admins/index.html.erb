@@ -1,11 +1,16 @@
-<h1>Listing admins</h1>
+<h1>Listing users</h1>
 <table>
 <% @users.each do |user| %>
   <tr>
     <th><%= user.email %></th>
+    <th>
+    <%=button_to 'Delete User', user, controller: "users", action: "destroy", id: user.id, confirm: "Are you sure?", method: :delete %>
+    </th>
   </tr>
 <% end %>
+</table>
 
+<table>
 <% @admins.each do |admin| %>
   <tr>
     <td><%= link_to 'Show', admin %></td>

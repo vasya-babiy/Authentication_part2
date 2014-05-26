@@ -74,9 +74,12 @@ class AdminsController < ApplicationController
   # DELETE /admins/1.json
   def destroy
     @admin = Admin.find(params[:id])
+    @user = User.find(params[:id])
+    @user.destroy
     @admin.destroy
 
     respond_to do |format|
+      redirect_to user_url(:session[:user_id])
       format.html { redirect_to admins_url }
       format.json { head :no_content }
     end
