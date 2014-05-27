@@ -1,7 +1,10 @@
 Auth::Application.routes.draw do
   resources :admins
   resources :sessions
-  resources :users
+
+  resources :users do
+    resource :profile, path_names: { edit: '' }, only: [ :index, :edit, :update ]
+  end
 
   get "sign_up" => "users#new", as: "sign_up"
   get "log_out" => "sessions#destroy", as: "log_out"

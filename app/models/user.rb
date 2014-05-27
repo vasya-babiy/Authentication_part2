@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_one :profile
+
   attr_accessible :email, :password, :password_confirmation
 
   attr_accessor :password
