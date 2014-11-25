@@ -14,15 +14,15 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save
-      @user.create_profile
-  		redirect_to log_in_path, notice: "Signed Up!"
+  		redirect_to root_url, notice: "Signed Up!"
   	else
   		render "new"
   	end
 	end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
+    @user = current_user(@user.id)
   end
 
   def update

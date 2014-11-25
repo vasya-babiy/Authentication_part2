@@ -1,1 +1,19 @@
-lal
+<h1>Profile</h1>
+<%= form_for @profile do |f| %>
+	<% if @profile.errors.any? %>
+		<div class="errors_messages">
+			<h2> Form is invalid </h2>
+			<ul>
+				<% @profile.errors.full_messages.each do |message| %>
+					<li> <%= message %> </li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :first_name %> <br />
+		<%= f.text_field :first_name %>
+	</p>
+
+	<p class="actions"><%= f.submit %></p>
+<% end %>

@@ -11,7 +11,8 @@
 			<% if current_user %>
 				Logged in as <%= current_user.email %>
 				<%= link_to "Log out", log_out_path %>
-				<%= link_to "Edit", edit_path %>
+				<%= link_to "Edit", edit_user_profile_path(current_user) %>
+
 			<% else %>
 				<%= link_to "Sign up", sign_up_path %>
 				<%= link_to "Log in", log_in_path %>
